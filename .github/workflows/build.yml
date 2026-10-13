@@ -43,8 +43,7 @@ jobs:
           openjdk-17-jdk \
           zip \
           unzip \
-          adb \
-          jarsigner
+          adb
 
     - name: Setup Buildozer cache
       uses: actions/cache@v4
