@@ -59,7 +59,10 @@ jobs:
         pip install cython==0.29.33 buildozer
 
     - name: Build with Buildozer
-      run: buildozer -v android debug
+      run: |
+        export PATH=$PATH:~/.buildozer/android/platform/android-sdk/cmdline-tools/latest/bin:~/.buildozer/android/platform/android-sdk/tools/bin
+        yes | sdkmanager --licenses || true
+        buildozer -v android debug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
